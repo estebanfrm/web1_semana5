@@ -1,0 +1,111 @@
+/*
+BEM
+
+BLOCK__ELEMENT -- MODIFIER 
+
+¿QUE ES BEM?
+BEM es una metodologia para nombrar clases en CSS que facilita la creacion 
+de componentes reutilizables y el mantenimiento del codigo.
+
+¿COMO SE DEFINE?
+- BLOCK: Representa un componente independiente que puede existir por si solo.
+- ELEMENT: Es una parte del bloque que no tiene sentido por si sola y depende del bloque Para su significado.
+- MODIFIER: Es una bandera que cambia la apariencia o el comportamiento del bloque o elemento.
+
+EJEMPLO:
+.boton {}
+.boton__icono {}
+.boton__icono--highlight {}
+
+BENEFICIOS:
+- Reutilizacion: Facilita la reutilizacion de componentes en diferentes partes del proyecto.
+- Mantenimiento: Facilita el mantenimiento del codigo al tener una estructura clara y consistente.
+- Colaboracion: Facilita la colaboracion entre desarrolladores al tener una convencion clara
+de nombres.
+- Escalabilidad: Facilita la escalabilidad del proyecto al tener una estructura modular.
+- Evita conflictos: Reduce la posibilidad de conflictos de nombres en CSS.
+
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body.site {
+    margin: 0;
+    font-family: sans-serif;
+}
+/*
+Bloque Layout
+*/
+
+.layout {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.layout__header {
+    background-color: lightgreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+.layout__title {
+    margin: 0;
+    font-size: medium;
+}
+
+.layout__footer {
+    background: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+.layout__footer-text {
+    margin: 0;
+}
+
+.layout__main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    min-height: 0;
+}
+
+/* Bloque Nav
+*/
+
+.nav {
+    background: lightsalmon;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: auto;
+}
+
+.nav__link {
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.nav__link:hover,
+.nav__link-active {
+    background: lightyellow;
+}
+
+.content {
+    background: lightpink;
+    padding: 16px;
+    overflow: auto;
+    min-height: 0;
+}
